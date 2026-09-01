@@ -20,6 +20,16 @@ From an empty repository to production serving real users in **94 days**, solo. 
 
 **Operations.** A single container behind a Cloudflare Tunnel — deliberately no load balancer, because Blazor Server pins a live circuit to the process that opened it. OpenTelemetry into Prometheus, Loki and Tempo. My own CI/CD with distributed build nodes and quality gates: format, lint, secret scan, build, test, coverage.
 
+### The delivery platform behind it
+
+FlowOS is built by a small team of AI agents working in parallel. That needed infrastructure of its own, so it was built alongside the product — **955 commits over the same period**, a gRPC daemon and a published CLI: 22 services, 41 background workers, 69 commands, across Domain / Application / Infrastructure layers.
+
+**The build farm is the development machines.** Not servers — the laptops and desktops the work happens on: a 15-watt mobile i7 and a 2014 quad-core AMD APU with mixed spinning and solid-state storage. Nodes advertise what they can do, claim jobs and heartbeat; an unclaimed or stale run raises an alert. A full CI pass takes about 45 minutes, one job at a time per node. That is not slow CI — it is CI on the hardware that already exists, and the trade is visible: lose one node and a deploy waits half an hour behind the queue.
+
+**The merge gate reads its own run table, not the provider's status API.** That is the difference that catches a green belonging to an earlier commit on the same branch, and refuses a head that no conclusive run has covered.
+
+**It deploys and heals itself.** The daemon watches its own version drift, redeploys, repairs, and publishes its own CLI package. It also supervises the agents: stuck sessions, stalled subagents, a queue restored after a restart, a guard on the main branch.
+
 ### Before that — RWS Group, 7 years
 
 Lead developer across every product team of an enterprise localisation and content platform.
