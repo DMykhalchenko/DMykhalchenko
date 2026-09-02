@@ -44,8 +44,14 @@ Lead developer across every product team of an enterprise localisation and conte
 
 .NET · C# · PostgreSQL · EF Core · Blazor Server · Podman · xUnit · Jenkins · Groovy · PowerShell · Linux · AWS · Cloudflare · OpenTelemetry
 
-### About the graph below
+### Code you can read
 
-Most of my work lives in private repositories, which is why the contribution graph is dense and the repository list is empty. The product above is the part you can open and use without asking me for anything.
+**[alloyed-devops-multitool](https://github.com/DMykhalchenko/alloyed-devops-multitool)** — adding logging, timing, retries and timeouts to legacy PowerShell automation *without editing the scripts*. It intercepts the commands a script already calls, so the script runs unmodified while every call reports itself with a correlation ID and timing.
 
-d.mykhalchenko@gmail.com
+PowerShell 7 and .NET 8. Analysis through the real PowerShell AST parser rather than regular expressions; command wrappers generated from one canonical catalog, with a CI check that fails when the generated artefacts drift; a decorator pipeline that keeps cross-cutting behaviour out of the wrapper logic; golden-file regression fixtures and ADRs for the boundaries that were expensive to reverse.
+
+It started as a modernization proposal that was not taken up, so I built it out myself.
+
+Most of the rest of my work lives in private repositories — which is why the contribution graph is dense and the repository list is short.
+
+d.mykhalchenko@gmail.com · [LinkedIn](https://www.linkedin.com/in/dmykhalchenko/)
