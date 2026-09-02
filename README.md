@@ -32,13 +32,13 @@ FlowOS is built by a small team of AI agents working in parallel. That needed in
 
 ### Before that — RWS Group, 7 years
 
-Lead developer across every product team of an enterprise localisation and content platform.
+Senior developer and technical product owner across the product line of an enterprise localisation and content platform.
 
 **Repository migration.** Built the automation that moved the entire product line from Bitbucket to GitHub Enterprise — alone, in three weeks, with no downtime for the ~50 engineers who depend on it. Prepare, report, wait for approval, then migrate and provision.
 
 **Delivery.** Designed and maintained 150+ CI/CD pipelines single-handedly.
 
-**Cloud.** Moved all 18 product services to the cloud, refactoring Windows-bound services and their build processes into Linux containers.
+**Runtime migration.** Led the product line off .NET Framework, from 2023 — onto cross-platform .NET on amd64 and arm64, into a fully AWS-hosted stack — VMware ESX, RDS and the managed services around them. That is what unbound the services from Windows and moved all 18 of them off-premise into Linux containers. Owned the design, the backlog and the larger part of the implementation, with a scrum team of three engineers, QA and DevOps alongside the product owner.
 
 ### Tools
 
